@@ -18,9 +18,10 @@ angular.module('mc.controllers', [])
       tot: {
         val: 0,
         calc: function() {
-          this.val = $scope.coreProps.cog - $scope.coreProps.cos;
+          this.val = $scope.coreProps.cog + $scope.coreProps.cos;
         },
         onChange: function() {
+          $scope.coreProps.cos = $scope.coreProps.cog - this.val;
         }
       },
       mgd: {
@@ -52,12 +53,11 @@ angular.module('mc.controllers', [])
     $scope.updateCalcProps = function() {
       var props = ['tot', 'mgd', 'mgp', 'mkp'];
       for (var i = 0; i < props.length; i++) {
-        $scope.calcProps[props[i]].calc();
+        $scope.calcProps[props[i]].calc(false);
       }
     };
     
     $scope.init = function() {
-      console.log('initialising calculator controller ...');
       $scope.updateCalcProps();
     }
     

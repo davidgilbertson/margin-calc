@@ -1,13 +1,21 @@
 module.exports = function(config){
+  'use strict';
   config.set({
 
     basePath : '../',
 
     files : [
-      'bower_components/angular/angular.js',
-      'bower_components/angular-route/angular-route.js',
-      'bower_components/angular-mocks/angular-mocks.js',
-      'app/js/**/*.js',
+      'app/js/vendor/jquery.js',
+      'app/js/vendor/angular.js',
+      'app/js/vendor/angular-route.js',
+      'app/js/vendor/angular-mocks.js',
+      'app/js/vendor/bootstrap.js',
+      'app/js/utils.js',
+      'app/js/app.js',
+      'app/js/services.js',
+      'app/js/controllers.js',
+      'app/js/filters.js',
+      'app/js/directives.js',
       'test/unit/**/*.js'
     ],
 
